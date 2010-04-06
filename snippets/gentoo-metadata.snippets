@@ -1,0 +1,25 @@
+snippet uflag
+	<flag name="${1}">
+		${2:description}
+	</flag>
+
+snippet upstream
+	<upstream>
+		<doc lang="en">${1}</doc>
+		<remote-id type="${2:type}">${3}</remote-id>
+		<changelog>${4}</changelog>
+		<bugs-to>${5}</bugs-to>
+	</upstream>
+
+snippet bbitbucket
+	http://bitbucket.org/${1:user}/${2:`expand("%:p:h:t")`}/issues/?status=new&amp;status=open
+snippet bcpan
+	http://rt.cpan.org/Public/Dist/Display.html?Name=${1:`expand("%:p:h:t")`}
+snippet bgithub
+	http://github.com/${1:user}/${2:`expand("%:p:h:t")`}/issues
+snippet bfailpad
+	https://bugs.launchpad.net/${1:`expand("%:p:h:t")`}
+snippet bgoogle
+	http://code.google.com/p/${1:`expand("%:p:h:t")`}/issues/list
+snippet bsforge
+	http://sourceforge.net/tracker/?group_id=${1:projectid}
