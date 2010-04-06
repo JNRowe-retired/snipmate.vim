@@ -1,0 +1,52 @@
+snippet pyabi
+	PYTHON_DEPEND="*"
+	SUPPORT_PYTHON_ABIS="1"
+
+snippet rpyabi
+	RESTRICT_PYTHON_ABIS="${1:3.*}"
+
+snippet dnose
+	DISTUTILS_SRC_TEST="nosetests"
+
+snippet dmod
+	PYTHON_MODNAME="${1:module}"
+
+snippet dnov
+	DISTUTILS_DISABLE_VERSIONING_OF_PYTHON_SCRIPTS="1"
+
+snippet epatch
+	epatch "${FILESDIR}"/${P}-${1:patchname}.patch
+
+snippet sinstall
+	src_install() {
+		emake DESTDIR="${D}" install || die "emake install failed"
+		dodoc ${1:NEWS README} || die "dodoc failed"
+	}
+
+snippet dentry
+	make_desktop_entry /usr/bin/${1:${PN}} "${2:description}" \
+		"${3:icon}" "${4:categories}"
+
+snippet zshcomp
+	if use zsh-completion; then
+		insinto /usr/share/zsh/site-functions
+		newins ${1} ${2:_`expand("%:p:h:t")`} || die "doins $2 failed"
+	fi
+
+snippet dobin
+	dobin ${1:${PN}} || die "dobin $1 failed"
+
+snippet doman
+	doman ${1:${PN}} || die "doman $1 failed"
+
+snippet ivim
+	if use vim; then
+		cd vim
+		insinto /usr/share/vim/vimfiles/ftdetect
+		doins scripts/vim/ftdetect/${1:${PN}}.vim || die "doins vim ftdetect failed"
+		insinto /usr/share/vim/vimfiles/plugin
+		doins plugin/${1:${PN}}.vim || die "doins vim plugin failed"
+		insinto /usr/share/vim/vimfiles/syntax
+		doins syntax/*.vim || die "doins vim syntax failed"
+	fi
+
