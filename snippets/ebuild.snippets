@@ -9,7 +9,7 @@ snippet dnose
 	DISTUTILS_SRC_TEST="nosetests"
 
 snippet dmod
-	PYTHON_MODNAME="${1:module}"
+	PYTHON_MODNAME="${1:`expand("%:p:h:t")`}"
 
 snippet dnov
 	DISTUTILS_DISABLE_VERSIONING_OF_PYTHON_SCRIPTS="1"
