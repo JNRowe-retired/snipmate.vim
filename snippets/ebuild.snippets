@@ -50,3 +50,7 @@ snippet ivim
 		doins syntax/*.vim || die "doins vim syntax failed"
 	fi
 
+snippet pushd
+	pushd ${1:dir} >/dev/null
+	${2}
+	popd >dev/null
