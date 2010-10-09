@@ -6,7 +6,7 @@ snippet uflag
 snippet upstream
 	<upstream>
 		<doc lang="en">${1}</doc>
-		<remote-id type="${2:type}">${3}</remote-id>
+		<remote-id type="${2:type}">${3:`expand("%:p:h:t")`}</remote-id>
 		<changelog>${4}</changelog>
 		<bugs-to>${5}</bugs-to>
 	</upstream>
