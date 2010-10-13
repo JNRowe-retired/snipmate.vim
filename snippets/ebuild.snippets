@@ -37,7 +37,7 @@ snippet dobin
 	dobin ${1:${PN}} || die "dobin $1 failed"
 
 snippet doman
-	doman ${1:${PN}} || die "doman $1 failed"
+	doman ${1:${PN}}.1 || die "doman $1.1 failed"
 
 snippet ivim
 	if use vim; then
