@@ -42,6 +42,15 @@ snippet doins
 snippet doman
 	doman ${1:${PN}}.1 || die "doman $1.1 failed"
 
+snippet dolib
+	dolib ${1:${PN}} || die "dolib $1 failed"
+
+snippet dolib.a
+	dolib.a ${1:${PN}}.a || die "dolib.a $1.a failed"
+
+snippet dolib.so
+	dolib.so ${1:${PN}}.so || die "dolib.so $1.so failed"
+
 snippet ivim
 	if use vim; then
 		cd vim
