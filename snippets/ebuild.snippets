@@ -36,6 +36,9 @@ snippet zshcomp
 snippet dobin
 	dobin ${1:${PN}} || die "dobin $1 failed"
 
+snippet doins
+	doins ${1:${PN}} || die "doins $1 failed"
+
 snippet doman
 	doman ${1:${PN}}.1 || die "doman $1.1 failed"
 
