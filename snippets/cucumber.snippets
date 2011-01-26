@@ -1,0 +1,22 @@
+snippet feature
+	Feature: ${1:title}
+		In order to ${2}
+		As ${3:role}
+		${4}
+
+		${5:scenario}
+
+snippet scenario
+	Scenario: ${1:title}
+		Given ${2}
+		When ${3}
+		Then ${4}
+
+snippet outline
+	Scenario Outline: ${1:title}
+		Given ${2}
+		When ${3}
+		Then ${4}
+
+	Examples:
+		| ${5} | ${6} |
